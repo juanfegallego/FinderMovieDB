@@ -37,6 +37,26 @@ router.get("/search/:query", async(req, res) => {
     }
 });
 
+router.get("/search/:tvId", async(req, res) => {
+    try {
+        let tvId  = req.params.tvId;
+        res.json(await seriesControllers.searchScreened(tvId));
+    } catch (err) {
+        return res.status(500).json ({
+            mensaje: err.message
+        });
+    }
+});
+
+router.get("/on_the_air/", async(req, res) => {
+    try {
+        res.json(await seriesControllers.onTheAir());
+    } catch (err) {
+        return res.status(500).json ({
+            mensaje: err.message
+        });
+    }
+});
 
 
 
