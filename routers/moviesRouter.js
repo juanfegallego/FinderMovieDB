@@ -26,6 +26,16 @@ router.get("/:id", async(req, res) => {
     }
 });
 
+router.get("/search/:query", async(req, res) => {
+    try {
+        let query = req.params.query;
+        res.json(await moviesControllers.searchByTitle(query));
+    } catch (err) {
+        return res.status(500).json ({
+            mensaje: err.message
+        });
+    }
+});
 
 
 
