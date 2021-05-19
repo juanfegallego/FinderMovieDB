@@ -5,7 +5,7 @@ const movieControllers = require("../controllers/moviesController");
 
 //CRUD
 
-ReadableStreamDefaultReader.length("/", async(req, res) => {
+router.get("/", async(req, res) => {
     try {
         res.json(await movieControllers.findTopRated());
     } catch (error) {
