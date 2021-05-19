@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 const moviesRouter = require("./routers/moviesRouter");
-const seriesRouter = require("./routes/seriesRouter");
+const seriesRouter = require("./routers/seriesRouter");
 
 
 router.use("/movies", moviesRouter);
