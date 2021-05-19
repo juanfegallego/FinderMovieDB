@@ -1,0 +1,44 @@
+
+const router = require("express").Router();
+
+const seriesControllers = require("../controllers/seriesControllers");
+
+//CRUD
+
+router.get("/", async(req, res) => {
+    try {
+        res.json(await seriesControllers.findTopRated());
+    } catch (err) {
+        return res.status(500).json ({
+            message: err.message
+        });
+    }
+});
+
+router.get("/:id", async(req, res) => {
+    try {
+        let id = req.params.id;
+        res.json(await seriesControllers.searchById(id));
+    } catch (err) {
+        return res.status(500).json ({
+            mensaje: err.message
+        });
+    }
+});
+
+router.get("/search/:query", async(req, res) => {
+    try {
+        let query = req.params.query;
+        res.json(await seriesControllers.searchByTitle(query));
+    } catch (err) {
+        return res.status(500).json ({
+            mensaje: err.message
+        });
+    }
+});
+
+
+
+
+
+module.exports = router;
