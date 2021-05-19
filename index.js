@@ -10,4 +10,4 @@ app.use(router);
 
 //Iniciamos el servidor
 
-app.listen(port, () => console.log("servidor funcionando"));
+app.listen(port, () => console.log(`http://localhost:${port}`));
