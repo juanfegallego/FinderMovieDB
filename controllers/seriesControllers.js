@@ -16,6 +16,16 @@ class Series{
         let res = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=79a61f5dc13e3e9e4834fadbf4f326c7&query=${query}`);
         return res.data;
     }
+
+    async searchScreened(){
+        let res = await axios.get(`https://api.themoviedb.org/3/tv/${tvId}?api_key=79a61f5dc13e3e9e4834fadbf4f326c7&language=en-US`);
+        return res.data;
+    }
+
+    async onTheAir(){
+        let res = await axios.get(`https://api.themoviedb.org/3/tv/on_the_air?api_key=79a61f5dc13e3e9e4834fadbf4f326c7&language=en-US&page=1`);
+        return res.data;
+    }
 }
 
 
