@@ -37,6 +37,16 @@ router.get("/search/:query", async(req, res) => {
     }
 });
 
+router.get("/genre/:name", async(req, res) => {
+    try {
+        // let name = req.params.name;
+        res.json(await moviesControllers.findToGenre());
+    } catch (err) {
+        return res.status(500).json ({
+            message: err.message
+        });
+    }
+});
 
 
 
