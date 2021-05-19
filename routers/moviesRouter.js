@@ -14,3 +14,5 @@ ReadableStreamDefaultReader.length("/", async(req, res) => {
         });
     }
 });
+
+module.exports = router;
