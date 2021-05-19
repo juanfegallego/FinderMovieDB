@@ -8,9 +8,9 @@ const moviesControllers = require("../controllers/moviesControllers");
 router.get("/", async(req, res) => {
     try {
         res.json(await moviesControllers.findTopRated());
-    } catch (error) {
+    } catch (err) {
         return res.status(500) ({
-            message: error.message
+            message: err.message
         });
     }
 });
