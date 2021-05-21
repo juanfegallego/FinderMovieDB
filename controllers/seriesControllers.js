@@ -17,8 +17,8 @@ class Series{
         return res.data;
     }
 
-    async searchScreened(){
-        let res = await axios.get(`https://api.themoviedb.org/3/tv/${tvId}?api_key=79a61f5dc13e3e9e4834fadbf4f326c7&language=en-US`);
+    async searchScreened(tvId){
+        let res = await axios.get(`https://api.themoviedb.org/3/tv/${tvId}/screened_theatrically?api_key=79a61f5dc13e3e9e4834fadbf4f326c7`);
         return res.data;
     }
 

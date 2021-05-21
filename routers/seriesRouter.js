@@ -15,6 +15,17 @@ router.get("/", async(req, res) => {
     }
 });
 
+router.get("/search/:tvId", async(req, res) => {
+    try {
+        let tvId  = req.params.tvId;
+        res.json(await seriesControllers.searchScreened(tvId));
+    } catch (err) {
+        return res.status(500).json ({
+            mensaje: err.message
+        });
+    }
+});
+
 router.get("/:id", async(req, res) => {
     try {
         let id = req.params.id;
@@ -30,17 +41,6 @@ router.get("/search/:query", async(req, res) => {
     try {
         let query = req.params.query;
         res.json(await seriesControllers.searchByTitle(query));
-    } catch (err) {
-        return res.status(500).json ({
-            mensaje: err.message
-        });
-    }
-});
-
-router.get("/search/:tvId", async(req, res) => {
-    try {
-        let tvId  = req.params.tvId;
-        res.json(await seriesControllers.searchScreened(tvId));
     } catch (err) {
         return res.status(500).json ({
             mensaje: err.message
