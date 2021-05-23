@@ -1,32 +1,39 @@
-<h1 align ="center">📽Reto  API TMDB 📽</h1>
+<h1 align ="center">📽 Reto  API TMDB 📽</h1>
 <br>
 
-Proyecto realizado para [Geeks Hubs](https://geekshubsacademy.com/). El cual consiste en el desarrollo de un backend con la API de [The Movie Database](https://developers.themoviedb.org/3/getting-started/introduction).<br>
+Proyecto en grupo realizado para [Geeks Hubs](https://geekshubsacademy.com/) por [Alejandro](https://github.com/2020-JAUG) y [Juan Felipe](https://github.com/juanfegallego).
 
-Este proyecto ha sido trabajado en grupo, formado por: [Alejandro](https://github.com/2020-JAUG) y [Juan Felipe](https://github.com/juanfegallego) apoyandonse en el uso de metodologías ágiles. 
+
+ Este reto consiste en el desarrollo de un backend para realizar consultas de datos en la <b>API</b> [The Movie Database](https://developers.themoviedb.org/3/getting-started/introduction) por medio de edpoints y aplicando el uso de metodologías ágiles.<br>
+
+ Para realizar este trabajo de forma colaborativa y hacer el reparto de tareas, hemos utilizado la herramienta <b>Trello.</b>
 
 <b>Tiempo de inicio/fin: 19 - 21 de mayo de 2021.</b>
 
-La forma en la que nos hemos organizado ha sido el trabajo durante dos ramas de desarrollo, una master y la aplicación Trello.
+Para su desarrollo nos hemos basado en las buenas practicas que nos ofrece <b>GitFlow.</b>
+
+Hemos utilizado dos ramas de desarrollo para trabajar nuestras funcionalidades de forma individual y después de validar cada endpoint, lo hemos subido a la rama <b>master.</b>
+
 <br>
+
 ![captura](/img/capturaTrello1.png)
+<br>
 ![captura](/img/capturaTrello2.png)
 
 
 
 <br>
-#ÍNDICE 
+# ÍNDICE
 
--[¿Qué es?🧐](#¿Qué-es?)
--[Requisitos⚙️](#Requisitos)
--[Agradecimientos👌🏻](#Agradecimientos)
+- [¿Qué es? 🧐](#¿Qué-es?)
+- [¿Cómo realizar una búsqueda?](#busqueda)
+- [Requisitos ⚙️](#requisitos)
+- [Tecnologías](#tecnologías)
 
-<br>
+# <h1 align ="center"> ¿Qué es? 🧐 </h1>
 
-#¿Qué es?🧐
-
-Es un backend el cual se conecta por una API de terceros que por medio de endpoints nos recopila la información requerida mediante el uso de promesas. <br>
-Ejemplo de una busqueda mediante <b>ID</b><br>
+Desde producción nos solicitan desarrollar un backend para realizar consultas de datos a una <b>API</b> de terceros mediante el uso de promesas. <br>
+Ejemplo de una búsqueda mediante <b>ID</b><br>
 
 ```JavaScript
 router.get("/:id", async(req, res) => {
@@ -42,23 +49,24 @@ router.get("/:id", async(req, res) => {
 ```
 <br>
 
-#Requisitos⚙️
+<h1 align ="center"> Requisitos ⚙️</h1>
 
 - Tener instalado un editor de código para poder modificar cualquier archivo del proyecto.
-- [Descargar](https://nodejs.org/es/) e Instalar Node.
+- [Descargar](https://nodejs.org/es/) e Instalar <b>Node.</b>
 ```
     $ npm install node
 ```
-- Instalar Axios.
+- Instalar <b>Axios.</b>
 ```
     $ npm install axios
 ```
-- Instalar Express.
+- Instalar <b>Express.</b>
 ```
     $ npm install express.
 ```
-## ¿Cómo realizar una búsqueda?🔎
-Para poder realizar una busqueda se tiene que levantar el servidor local, en nuestro caso el <http://localhost:3000>.
+
+# <h1 align ="center">¿Cómo realizar una búsqueda? 🔎</h1>
+Para poder realizar una búsqueda se tiene que levantar el servidor local, en nuestro caso el <http://localhost:3000>.
 
 - Abre la terminal y ejecuta el comando
 ```
@@ -66,29 +74,28 @@ Para poder realizar una busqueda se tiene que levantar el servidor local, en nue
 ```
 <br>
 
-###Enlaces de Búsqueda
+<h2 align ="center"> Enlaces de búsquedas </h2>
 
 <h3 align ="center">Películas</h3>
 
 ● Películas top rated. (http://localhost:3000/movies/)
-● Película según su id. (http://localhost:3000/movies/"id de lapelicula")
+● Película según su id. (http://localhost:3000/movies/"id de lapelicula ej: 35")
 ● Película por título. (http://localhost:3000/movies/search/"Título de la pelicula")
 ● Películas con determinado género (indicando nombre, no id).
  (http://localhost:3000/movies/genre/"ej: Action")<br>
  <h3 align ="center">Series</h3>
 
-● Obtener series top rated. (http://localhost:3000/series/)
-● Obtener series por id. (http://localhost:3000/series/"id de laserie")
-● Obtener series por título. (http://localhost:3000/series/search/"Título de la serie")
-● Obtener series que vayan a tener un capítulo emitido en lospróximos  7 dias. (http://localhost:3000/series/search/on_the_air)
-● Obtener series que vayan a tener un pase en teatros o cines. (http://localhost:3000/series/search/)
+● Series top rated. (http://localhost:3000/series/)
+● Series por id. (http://localhost:3000/series/"id de laserie")
+● Series por título. (http://localhost:3000/series/search/"Título de la serie")
+● Series que vayan a tener un capítulo emitido en los próximos 7 días. (http://localhost:3000/series/search/on_the_air)
+● Series que vayan a tener un pase en teatros o cines. (http://localhost:3000/series/search/)
 
-#Tecnologías💻
-
-Para el desarrollo de este proyecto hemos trabajado con las siguientes tecnologías.<br>
+# <p align ="center">Tecnologías 💻</p>
+##### Para el desarrollo de este proyecto hemos trabajado con las siguientes tecnologías.<br>
 
  <a href="https://git-scm.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a><a href="https://nodejs.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a><a href="https://postman.com" target="_blank"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/>
- [![Logotipo Express](https://i.cloudup.com/zfY6lL7eFa-300x300.png)](http://expressjs.com/)
+[![Logotipo Express](https://i.cloudup.com/zfY6lL7eFa-300x300.png)](http://expressjs.com/)
 <br>
 
 
