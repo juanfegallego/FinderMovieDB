@@ -4,10 +4,14 @@ class Users {
 
     async createUser(user) {
 
-        return user;
+        return User.create(user);
     }
-}
 
+    async findAllUsers() {
+        return User.findAll();
+    }
+
+}
 
 
 let usersController = new Users();
