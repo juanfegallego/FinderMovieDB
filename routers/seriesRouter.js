@@ -37,9 +37,10 @@ router.get("/:id", async(req, res) => {
     }
 });
 
-router.get("/search/:query", async(req, res) => {
+router.get("/searchTitle/:query", async(req, res) => {
     try {
         let query = req.params.query;
+        console.log(query)
         res.json(await seriesControllers.searchByTitle(query));
     } catch (err) {
         return res.status(500).json ({
