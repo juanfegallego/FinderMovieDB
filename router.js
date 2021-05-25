@@ -6,7 +6,7 @@ const userRouter = require("./routers/userRouter");
 
 router.use("/movies", moviesRouter);
 router.use("/series", seriesRouter);
-router.use("/user", userRouter);
+router.use("/users", userRouter);
 
 module.exports = router;
 
