@@ -11,6 +11,28 @@ class Users {
         return User.findAll();
     }
 
+    async modifyUser(body) {
+
+        return User.update(
+            //DAtos que cambiamos
+            {
+                edad: body.edad,
+                direccion: body.direccion,
+                cp: body.cp,
+                email: body.email,
+                telefono: body.telefono
+            },
+            //Donde
+            { where: {id: body.id}}
+
+        )
+    }
+
+    async userId(id) {
+
+        return User.findByPk(id);
+    }
+
 }
 
 
