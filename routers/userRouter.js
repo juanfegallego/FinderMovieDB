@@ -13,6 +13,28 @@ router.post('/',async (req, res) => {
     }
 });
 
+router.get("/:id", async(req, res) => {
+    try {
+        const id = req.params.id;
+        res.json(await usersControllers.userId(id));
+    } catch (error) {
+        return res.status(500).json({
+            message: error.message
+        });
+    }
+});
+
+router.put("/", async(req, res) => {
+    try {
+        const body = req.body;
+        res.json( await usersControllers.modifyUser(body));
+    } catch (error) {
+        return res.status(500).json({
+            message: error.message
+        });
+    }
+});
+
 router.get("/", async(req, res) => {
     try {
         res.json(await usersControllers.findAllUsers());
