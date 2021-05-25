@@ -33,6 +33,11 @@ class Users {
         return User.findByPk(id);
     }
 
+    async deleteUser(id){
+
+        return User.destroy({where: {id: id}});
+    }
+
 }
 
 
