@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const usersControllers = require("../controllers/usersControllers");
+const authenticate = require("../middleware/authenticate")
 
 router.post('/',async (req, res) => {
     try {
@@ -13,7 +14,7 @@ router.post('/',async (req, res) => {
     }
 });
 
-router.get("/:id", async(req, res) => {
+router.get("/:id", authenticate, async(req, res) => {
     try {
         const id = req.params.id;
         res.json(await usersControllers.userId(id));
@@ -24,7 +25,7 @@ router.get("/:id", async(req, res) => {
     }
 });
 
-router.put("/", async(req, res) => {
+router.put("/", authenticate, async(req, res) => {
     try {
         const body = req.body;
         res.json( await usersControllers.modifyUser(body));
@@ -45,7 +46,7 @@ router.get("/", async(req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authenticate, async (req, res) => {
     try {
         const id = req.params.id;
         res.json(await usersControllers.deleteUser(id));
