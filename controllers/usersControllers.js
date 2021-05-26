@@ -2,9 +2,19 @@ const { User } = require("../models");
 
 class Users {
 
-    async createUser(user) {
+    async createUser(body) {
 
-        return User.create(user);
+        let password = body.password
+        let passwordHashed = bcrypt.hasSync(password,10)
+
+        body.password = passwordHashed
+        return User.create(body);
+    }
+
+    async nameUse(nombre){
+        return User.findOne({
+            where: {nombre}
+        })
     }
 
     async findAllUsers() {
