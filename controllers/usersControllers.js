@@ -1,11 +1,12 @@
 const { User } = require("../models");
+const bcrypt = require("bcrypt");
 
 class Users {
 
     async createUser(body) {
 
         let password = body.password
-        let passwordHashed = bcrypt.hasSync(password,10)
+        let passwordHashed = bcrypt.hashSync(password,10)
 
         body.password = passwordHashed
         return User.create(body);
