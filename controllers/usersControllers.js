@@ -12,7 +12,7 @@ class Users {
         return User.create(body);
     }
 
-    async nameUse(nombre){
+    async nameUser(nombre){
         return User.findOne({
             where: {nombre}
         })

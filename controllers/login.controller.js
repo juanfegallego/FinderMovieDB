@@ -8,7 +8,7 @@ class LoginController {
 
     async validate( nombreCheck, passwordCheck ) {
 
-        let user = await userController.nameUse(nombreCheck);
+        let user = await userController.nameUser(nombreCheck);
 
         let password = user.password;
 
