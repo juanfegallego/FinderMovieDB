@@ -1,0 +1,58 @@
+const router = require("express").Router();
+const ordersController = require("../controllers/orders.controller");
+
+router.post("/", async (req, res) => {
+    try {
+        const body = req.body;
+        res.json( await ordersController.createOrder(body));
+    } catch (error) {
+        return res.status(500).json({
+            messsage: error.message
+        });
+    }
+});
+
+router.get("/:id", async(req, res) => {
+    try {
+        const id = req.params.id;
+        res.json( await ordersController.show_order_by_id(id));
+    } catch (error) {
+        return res.status(500).json({
+            message: error.message
+        });
+    }
+});
+
+router.get("/", async(req, res) => {
+    try {
+        res.json( await ordersController.findAllOrders());
+    } catch (error) {
+        return res.status(500).json({
+            message: error.message
+        });
+    }
+});
+
+router.put("/", async(req, res) => {
+    try {
+        const body = req.body;
+        res.json( await ordersController.modifyOrder(body));
+    } catch (error) {
+        return res.status(500).json({
+            message: error.message
+        });
+    }
+});
+
+router.delete("/:id", async(req, res) => {
+    try {
+        const id = req.params.id;
+        res.json( await ordersController.removeOrder(id));
+    } catch (error) {
+        return res.status(500).json({
+            message: error.message
+        });
+    }
+});
+
+module.exports = router;
