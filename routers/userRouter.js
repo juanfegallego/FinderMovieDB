@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const usersControllers = require("../controllers/usersControllers");
-const authenticate = require("../middleware/authenticate")
+const authenticate = require("../middleware/authenticate");
 
 router.post('/',async (req, res) => {
     try {
