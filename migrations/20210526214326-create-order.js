@@ -1,23 +1,23 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Pedidos', {
+    await queryInterface.createTable('Orders', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      idUser: {
+      userId: {
         type: Sequelize.INTEGER
       },
-      idMovie: {
+      movieId: {
         type: Sequelize.INTEGER
       },
-      fechaALquiler: {
+      rentalDate: {
         type: Sequelize.DATE
       },
-      fechaDevolucion: {
+      returnDate: {
         type: Sequelize.DATE
       },
       createdAt: {
@@ -31,6 +31,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Pedidos');
+    await queryInterface.dropTable('Orders');
   }
 };
