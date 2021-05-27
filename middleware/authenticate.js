@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const secret = "Somos un equipazo";
 
 const authenticate = (req, res, next) => {
+
     try {
 
         if( !req.headers.authorization ) {
@@ -11,7 +12,7 @@ const authenticate = (req, res, next) => {
         let token = req.headers.authorization.split(" ")[1];
         let auth = jwt.verify(token, secret);
 
-        if( auth.userId != req.body.id ) {
+        if( auth.userId != req.body.id && auth.userId != req.body.userId ) {
 
             throw new Error("No tienes permiso.");
         }
