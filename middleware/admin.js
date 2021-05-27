@@ -26,5 +26,5 @@ const admin = (req,res,next) => {
         });
     }
 };
-
+//Esto va por ti
 module.exports = admin;
