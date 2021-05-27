@@ -1,12 +1,23 @@
 const jwt = require("jsonwebtoken");
 const secret = "Somos un equipazo";
+
 const authenticate = (req, res, next) => {
     try {
-        let token = require.headers.authenticate.split(" ")[1];
+
+        if( !req.headers.authorization ) {
+            return new Error ("No tienes token");
+        }
+
+        let token = req.headers.authorization.split(" ")[1];
         let auth = jwt.verify(token, secret);
-        if( auth.userId != req.params.id )
-        throw new Error("No tienes permiso.");
+
+        if( auth.userId != req.body.id ) {
+
+            throw new Error("No tienes permiso.");
+        }
+
         return next();
+
     } catch (error) {
         res.status(500).json({
             message: error.message
