@@ -18,14 +18,14 @@ class Whis {
         return Order.findAll();
     }
 
-    async modifyOrder(body) {
+    async modifyOrder(body, idOrder) {
 
         return Order.update(
             //DAtos que cambiamos
             // movieId: body.movieId
             {  rentalDate: body.rentalDate, returnDate: body.returnDate },
             //Donde
-            { where: {id: body.id}}
+            { where: {id: idOrder}}
 
         )
     }
