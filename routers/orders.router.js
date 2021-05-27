@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const ordersController = require("../controllers/orders.controller");
+const authenticate = require("../middleware/authenticate");
 
-router.post("/", async (req, res) => {
+router.post("/", authenticate, async (req, res) => {
     try {
         const body = req.body;
         res.json( await ordersController.createOrder(body));
@@ -12,7 +13,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-router.get("/:id", async(req, res) => {
+router.get("/:id", authenticate, async(req, res) => {
     try {
         const id = req.params.id;
         res.json( await ordersController.show_order_by_id(id));
@@ -23,7 +24,7 @@ router.get("/:id", async(req, res) => {
     }
 });
 
-router.get("/", async(req, res) => {
+router.get("/", authenticate, async(req, res) => {
     try {
         res.json( await ordersController.findAllOrders());
     } catch (error) {
@@ -33,7 +34,7 @@ router.get("/", async(req, res) => {
     }
 });
 
-router.put("/", async(req, res) => {
+router.put("/", authenticate, async(req, res) => {
     try {
         const body = req.body;
         res.json( await ordersController.modifyOrder(body));
@@ -44,7 +45,7 @@ router.put("/", async(req, res) => {
     }
 });
 
-router.delete("/:id", async(req, res) => {
+router.delete("/:id", authenticate, async(req, res) => {
     try {
         const id = req.params.id;
         res.json( await ordersController.removeOrder(id));
