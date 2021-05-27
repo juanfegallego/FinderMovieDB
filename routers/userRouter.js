@@ -50,7 +50,6 @@ router.delete('/:id', authenticate, async (req, res) => {
     try {
         const id = req.params.id;
         res.json(await usersControllers.deleteUser(id));
-
     }catch (err) {
         return res.status(500).json({
             message: err.message
