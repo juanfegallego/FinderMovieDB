@@ -19,7 +19,8 @@ class Whis {
     }
 
     async userOder(userId) {
-        return Order.findByPk(userId), {where: {userId: body.id}}
+
+        return Order.findAll({ where: {userId: userId}})
     }
 
     async modifyOrder(body, idOrder) {
