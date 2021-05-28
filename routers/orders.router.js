@@ -34,6 +34,17 @@ router.get("/", authenticate, async(req, res) => {
     }
 });
 
+router.get("/orderById", async(req, res) =>{
+    try {
+        const body = req.body;
+        res.json(await ordersController.userOder(body));
+    } catch (error) {
+        return res.status(500).json({
+            message: error.message
+        });
+    }
+});
+
 router.put("/:id", authenticate,  async(req, res) => {
     try {
         const idOrder = req.params.id;
