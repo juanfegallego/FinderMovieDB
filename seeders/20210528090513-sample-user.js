@@ -14,7 +14,8 @@ module.exports = {
      await queryInterface.bulkInsert('Users', [
       {
         nombre: "Juan Felipe",
-        password: "$2b$10$AHlMuxNKohLyYljchCTiouyfBQRvZUYlOMHSl3OZwi3nzfwy6Fr5e",
+        password: "$2b$10$6CU2Z0A8N3ZxpfNnHsD8z.JpQoQDp0I0hgcEgaJrJeva6LmFBpDGC",
+        //pass:gitlog
         isAdmin: true,
         apellido1: "Porras",
         apellido2: "Gallego",
@@ -28,7 +29,8 @@ module.exports = {
       },
       {
         nombre: "Alejandro",
-        password: "$2b$10$R74orrm2ZrAtglf5siTVJurWnBj2LuNoiVGyTtaiacY0DGbtbd5lu",
+        password: "$2b$10$Mz7t6/vkgd8E0LzIFIUtPO3SSbC2KiSQSloskqq10zIEeuvEqD5dC",
+        //pass:gitpush
         isAdmin: true,
         apellido1: "Urbina",
         apellido2: "Gonzalez",
@@ -42,7 +44,8 @@ module.exports = {
       },
       {
         nombre: "Marcos",
-        password: "$2b$10$h9YduQ1UPpHPli403ump1OM4Le2z2G5WrQsKLo55ymYYx0bg1yrzW",
+        password: "$2b$10$DgllQUK2jDcIigM4SrNimO03SRTJe.pQWvFgA0PDZmAAOZWGr3jXG",
+        //pass:gitmerge
         isAdmin: false,
         apellido1: "domingo",
         apellido2: "Gonzalez",
@@ -56,7 +59,8 @@ module.exports = {
       },
       {
         nombre: "Cristina",
-        password: "$2b$10$h9YduQ1UPpHPli403ump1OM4Le2z2G5WrQsKLo55ymYYx0bg1yrzW",
+        password: "$2b$10$A.iOiEC9Rej18ka2b4sHae6dX1DoSe7sGDH57AgDsGs94EF9a67B2",
+        //pass:gitpull
         isAdmin: false,
         apellido1: "Garcia",
         apellido2: "Chulia",
