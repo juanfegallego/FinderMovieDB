@@ -2,7 +2,7 @@ const router = require("express").Router();
 const ordersController = require("../controllers/orders.controller");
 const authenticate = require("../middleware/authenticate");
 
-router.post("/", authenticate, async (req, res) => {
+router.post("/", async (req, res) => {
     try {
         const body = req.body;
         res.json( await ordersController.createOrder(body));
