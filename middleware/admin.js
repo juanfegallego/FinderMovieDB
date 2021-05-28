@@ -7,7 +7,6 @@ const admin = (req,res,next) => {
         if(!req.headers.authorization){
             // return new Error("No tienes autorización");
             return "no tenías token ";
-            
         }
 
         let token = req.headers.authorization.split(' ')[1];
