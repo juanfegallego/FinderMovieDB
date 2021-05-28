@@ -34,10 +34,10 @@ router.get("/", authenticate, async(req, res) => {
     }
 });
 
-router.get("/orderById", async(req, res) =>{
+router.post("/orderById", async(req, res) =>{
     try {
-        const body = req.body;
-        res.json(await ordersController.userOder(body));
+        const id = req.body.id;
+        res.json(await ordersController.userOder(id));
     } catch (error) {
         return res.status(500).json({
             message: error.message
