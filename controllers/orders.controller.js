@@ -18,6 +18,10 @@ class Whis {
         return Order.findAll();
     }
 
+    async userOder(userId) {
+        return Order.findByPk(userId), {where: {userId: body.id}}
+    }
+
     async modifyOrder(body, idOrder) {
 
         return Order.update(
