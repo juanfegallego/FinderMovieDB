@@ -23,6 +23,8 @@ module.exports = {
         cp: 46022,
         email: "juanfe@cv.es",
         telefono: 616367359,
+        updatedAt: "2021-05-28",
+        createdAt: "2021-05-28"
       },
       {
         nombre: "Alejandro",
@@ -35,6 +37,8 @@ module.exports = {
         cp: 46002,
         email: "alejandro@cv.es",
         telefono: 612377659,
+        updatedAt: "2021-05-28",
+        createdAt: "2021-05-28"
       },
       {
         nombre: "Marcos",
@@ -47,6 +51,8 @@ module.exports = {
         cp: 46004,
         email: "marcos@cv.es",
         telefono: 611387659,
+        updatedAt: "2021-05-28",
+        createdAt: "2021-05-28"
       },
       {
         nombre: "Cristina",
@@ -59,6 +65,8 @@ module.exports = {
         cp: 46023,
         email: "cristina@cv.es",
         telefono: 617397669,
+        updatedAt: "2021-05-28",
+        createdAt: "2021-05-28"
       },
     ]
 
