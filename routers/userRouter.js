@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const usersControllers = require("../controllers/usersControllers");
 const authenticate = require("../middleware/authenticate");
+const admin = require("../middleware/admin");
 
 router.post('/',async (req, res) => {
     try {
@@ -36,7 +37,7 @@ router.put("/", authenticate, async(req, res) => {
     }
 });
 
-router.get("/", async(req, res) => {
+router.get("/", admin, async(req, res) => {
     try {
         res.json(await usersControllers.findAllUsers());
     } catch (error) {
