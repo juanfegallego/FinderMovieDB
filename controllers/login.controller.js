@@ -21,6 +21,7 @@ class LoginController {
         let payload = {
             userId: user.id,
             createdAt: new Date,
+            isAdmin: user.isAdmin
         };
 
         return jwt.sign(payload, secret);
