@@ -4,16 +4,15 @@ const secret = "Somos un equipazo";
 const admin = (req,res,next) => {
     try {
 
-        if(!req.headers.authorization){
+        if(!req.headers.authorization) {
             // return new Error("No tienes autorización");
             return "no tenías token ";
         }
 
         let token = req.headers.authorization.split(' ')[1];
-
         let auth = jwt.verify(token,secret);
 
-        if((auth.userId != req.body.id) && (auth.isAdmin == req.body.isAdmin)){
+        if( auth.isAdmin == false ) {
             throw new Error("No tienes permiso para realizar esta acción");
         }
 
