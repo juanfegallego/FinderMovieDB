@@ -44,6 +44,11 @@ class Users {
         return User.findByPk(id);
     }
 
+    async users_by_cp(body) {
+
+        return User.findAll( {where: {cp: body.cp}} )
+    }
+
     async deleteUser(id){
 
         return User.destroy({where: {id: id}});
