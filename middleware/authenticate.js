@@ -12,12 +12,18 @@ const authenticate = (req, res, next) => {
         let token = req.headers.authorization.split(" ")[1];
         let auth = jwt.verify(token, secret);
 
-        if( auth.userId != req.body.id && auth.userId != req.body.userId ) {
+        if(  auth.isAdmin == true ) {
 
-            throw new Error("No tienes permiso.");
+            return next();
+
+        } else {
+            if( auth.userId != req.body.id && auth.userId != req.body.userId )  {
+
+                throw new Error("No tienes permiso.");
+            } else {
+                return next();
+            }
         }
-
-        return next();
 
     } catch (error) {
         res.status(500).json({
